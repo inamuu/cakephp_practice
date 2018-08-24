@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    build: nginx
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - php
+
+  php:
+    image: php:7.3-rc-fpm
+    restart: always
+    volumes:
+      - ./app:/var/www/html
