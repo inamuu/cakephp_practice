@@ -1,5 +1,6 @@
 From nginx:latest
 MAINTAINER inamuu
 
-RUN mkdir -p /var/www/example.com/public/webroot
+RUN rm -f /etc/nginx/conf.d/default.conf
+RUN mkdir -p /var/www/html
 COPY files/ /etc/nginx/
