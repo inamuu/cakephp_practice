@@ -13,3 +13,14 @@ services:
     restart: always
     volumes:
       - ./app:/var/www/html
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - "./.data/db:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: cakephp
+      MYSQL_DATABASE: cakephp
+      MYSQL_USER: cakephp
+      MYSQL_PASSWORD: cakephp
