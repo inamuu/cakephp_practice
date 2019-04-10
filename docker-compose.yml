@@ -5,16 +5,18 @@ services:
     build: nginx
     restart: always
     ports:
-      - "8080:80"
+      - "10080:80"
     depends_on:
       - php
+    volumes:
+      - ./cakephp/app/webroot/:/var/www/html
 
   php:
     container_name: cakephp_php
     image: php:7.3-rc-fpm
     restart: always
     volumes:
-      - ./cakephp/app/webroot:/var/www/html
+      - ./cakephp/app/webroot/:/var/www/html
 
   db:
     container_name: cakephp_db
