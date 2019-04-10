@@ -9,14 +9,14 @@ services:
     depends_on:
       - php
     volumes:
-      - ./cakephp/app/webroot/:/var/www/html
+      - ./cakephp:/var/www/html
 
   php:
     container_name: cakephp_php
     image: php:7.3-rc-fpm
     restart: always
     volumes:
-      - ./cakephp/app/webroot/:/var/www/html
+      - ./cakephp:/var/www/html
 
   db:
     container_name: cakephp_db
