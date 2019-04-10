@@ -13,7 +13,7 @@ services:
 
   php:
     container_name: cakephp_php
-    image: php:7.3-rc-fpm
+    build: php-fpm
     restart: always
     volumes:
       - ./cakephp:/var/www/html
@@ -22,7 +22,8 @@ services:
     container_name: cakephp_db
     image: mysql:5.7
     volumes:
-      - "./.data/db:/var/lib/mysql"
+      - ./.data/db:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: cakephp
