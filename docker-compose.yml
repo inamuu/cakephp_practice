@@ -20,7 +20,7 @@ services:
 
   db:
     container_name: cakephp_db
-    image: mysql:5.7
+    build: mysql
     volumes:
       - ./.data/db:/var/lib/mysql
       - ./mysql/init:/docker-entrypoint-initdb.d
