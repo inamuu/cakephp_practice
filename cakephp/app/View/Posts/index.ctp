@@ -28,6 +28,15 @@
         </td>
         <td>
             <?php
+                echo $this->Form->postLink(
+                    '削除する',
+                    array('action' => 'delete', $post['Post']['id']),
+                    array('confirm' => '本当に削除しますか？')
+                );
+            ?>
+        </td>
+        <td>
+            <?php
                 echo $this->Html->link(
                     '編集する',
                     array('action' => 'edit', $post['Post']['id'])
