@@ -29,4 +29,28 @@ class PostsController extends AppController {
             $this->Flash->error(__('Unable to add your post.'));
         }
     }
+
+    public function edit() {
+        if (!$id) {
+            throw new NotFoundException(__('Invalid Post'));
+        }
+
+        $post = $this->Post->findById($id);
+        if (!$post) {
+            throw new NotFoundException(__('Invalid Post'));
+        }
+
+        if ($this->request->is(array('post', 'put'))) {
+            $this->Post->id = $id;
+            if ($this->Post->save($this->request->data)) {
+                $this->Flash->success(__('Your post has been updated.'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            $this->Flash->error(__('Unable to update your post.'));
+        }
+
+        if (!$this->request->data) {
+            $this->request->data = $post;
+        }
+    }
 }
