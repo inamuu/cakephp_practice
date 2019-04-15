@@ -30,7 +30,7 @@ class PostsController extends AppController {
         }
     }
 
-    public function edit() {
+    public function edit($id = null) {
         if (!$id) {
             throw new NotFoundException(__('Invalid Post'));
         }

@@ -29,7 +29,7 @@
         <td>
             <?php
                 echo $this->Html->link(
-                    'Edit',
+                    '編集する',
                     array('action' => 'edit', $post['Post']['id'])
                 );
             ?>
