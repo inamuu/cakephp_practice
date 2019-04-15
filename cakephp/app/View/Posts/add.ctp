@@ -2,7 +2,7 @@
 
 <?php
 echo $this->Form->create('Post');
-echo $this->From->input('title');
-echo $this->From->input('body', array('rows'=> '3' ));
-echo $this->From->end('Save Post');
+echo $this->Form->input('title');
+echo $this->Form->input('body', array('rows'=> '3' ));
+echo $this->Form->end('Save Post');
 ?>
