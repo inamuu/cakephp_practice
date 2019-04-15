@@ -7,7 +7,7 @@
 
 ### Setup
 
-下記手順を参考にやっていきます。
+下記手順を参考にやっていきます。  
 https://book.cakephp.org/2.0/ja/tutorials-and-examples/blog/blog.html
 
 1. git clone -b 2.x git://github.com/cakephp/cakephp.git
