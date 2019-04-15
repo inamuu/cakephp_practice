@@ -53,4 +53,23 @@ class PostsController extends AppController {
             $this->request->data = $post;
         }
     }
+
+    public function delete($id) {
+        if ($this->request->is('get')) {
+            throw new MethodNotAllowedException();
+        } 
+        
+        if {
+            ($this->Post->delete($id)) {
+            $this->Flash->success(
+                __('記事ID: %s は削除されました', h($id))
+            );
+        } else {
+            $this->Flash->error(
+                __('記事ID: %s は削除できませんでした', h($id))
+            );
+        }
+
+        return $this->redirect(array('action' => 'index'));
+    }
 }
