@@ -1,4 +1,12 @@
 <h1>Blog posts</h1>
+
+<?php
+    echo $this->Html->link(
+        '記事の追加',
+        array('controller' => 'posts', 'action' => 'add')
+    );
+?>
+
 <table>
     <tr>
         <th>Id</th>
