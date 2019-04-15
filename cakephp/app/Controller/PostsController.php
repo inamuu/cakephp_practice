@@ -59,8 +59,7 @@ class PostsController extends AppController {
             throw new MethodNotAllowedException();
         } 
         
-        if {
-            ($this->Post->delete($id)) {
+        if ($this->Post->delete($id)) {
             $this->Flash->success(
                 __('記事ID: %s は削除されました', h($id))
             );
